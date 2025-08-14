@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+from django.conf import settings
+
+def homepage(request):
+    return render(request, "index.html",{
+        "restaurant_phone":settings.RESTAURANT_PHONE
+    })
