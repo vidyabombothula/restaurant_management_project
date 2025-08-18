@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> Contact Form</title>
+    </head>
+    <body>
+
+        <h2>Contact Us</h2>
+
+        <form id="contactForm">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+
+            <input type="submit" value="sub,it">
+
+        </form>
+
+
+        <p id="error-message" style="color:red"></p>
+
+        <script>
+            const form=document.getelementById("contactForm");
+            const errorMessage=document.getelementById("error-message");
+
+        form.addEventListener("submit",function(event){
+            const name=document.getelementById("name").value.trim();
+            const email=document.getelementById("email").value.trim();
+            
+            if (name ===""  || email===""){
+            errorMessage.textContent="Please fill in both name and email.";
+            event.preventdefault();
+            }
+            else{
+            
+            errorMessage.textContent-"";
+            }
+            });
+            </script>
+
+    </body>
+
+</html>
