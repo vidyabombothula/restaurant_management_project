@@ -9,4 +9,6 @@ class MenuAdmin(admin.ModelAdmin):
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     list_display=('menu_item','quantity','created_at')
-    list_filter=('created_at')
+    list_filter=( 'status','created_at')
+    search_fields=('customer__username',)
+    filter_horizontal=('items',)
