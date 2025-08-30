@@ -8,5 +8,7 @@ from django.conf import settings
         "phone_number": "1234567"
     }
 
-    return render(request, "index.html", context)
+    return render(request, "home.html", {
+        'restaurant_name':settings.RESTAURANT_NAME 
+    })
 
